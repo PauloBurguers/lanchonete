@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Paulo Burgues</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Paulo Burguers</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Paulo Burguers</h1>
-<p>Aqui entregamos qualidade e esperiencias unicas</p>
+<header class="header">
+    <div class="header-content">
+        <img src="img/logo.JPG" alt="Logo Paulo Burguers" class="logo">
+
+        <div>
+            <h1>Paulo Burguers</h1>
+            <p>Aqui entregamos qualidade e experiências únicas</p>
+        </div>
+    </div>
 </header>
 
 <section>
-<h2>📍 Endereço</h2>
-<p>Rua Fioravante Barassa, 60 – Jardim Silmara</p>
+    <h2>📍 Endereço</h2>
+    <p>Rua Fioravante Barassa, 60 – Jardim Silmara</p>
 </section>
 
 <section>
-<h2>📞 Telefone</h2>
-<p>(19) 99996-2216</p>
+    <h2>📞 Telefone</h2>
+    <p>(19) 99996-2216</p>
 </section>
 
 <section>
-<h2>📝 Cadastro do Cliente</h2>
+    <h2>📝 Cadastro do Cliente</h2>
+    <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="tel" placeholder="Telefone" required>
+        <input type="text" placeholder="Endereço" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</section>
+<section id="cardapio">
+    <h2>🍔 Nosso Cardápio</h2>
 
-<form>
-<input type="text" placeholder="Nome" required>
-<input type="tel" placeholder="Telefone" required>
-<input type="text" placeholder="Endereço" required>
-
-<button type="submit">Cadastrar</button>
-</form>
-
+    <div class="cardapios">
+        <img src="img/cardapio1.JPG" alt="Cardápio Tradicional" class="img-cardapio">
+        <img src="img/cardapio2.JPG" alt="Cardápio Especial" class="img-cardapio">
+    </div>
 </section>
 
 <section>
-<h2>💬 Pedir pelo WhatsApp</h2>
-<a href="https://wa.me/5519999962216">Abrir WhatsApp</a>
+    <h2>💬 Pedir pelo WhatsApp</h2>
+    <a href="https://wa.me/5519999962216" target="_blank">Abrir WhatsApp</a>
 </section>
 
 <footer>
-<p>© 2026 Paulo Burguers </p>
+    <p>© 2026 Paulo Burguers</p>
 </footer>
 
 </body>
