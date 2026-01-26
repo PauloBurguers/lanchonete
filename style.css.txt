@@ -1,32 +1,43 @@
-/* RESET TOTAL */
+/* RESET GERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* EVITA ZOOM E QUEBRA DE TELA */
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
+/* CORPO */
+body {
     background-color: #f5f5f5;
     color: #333;
+}
+
+/* LOGO DE FUNDO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../img/logo.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+    opacity: 0.08;
+    z-index: -1;
 }
 
 /* HEADER */
 .header {
     background-color: #d32f2f;
-    color: #fff;
+    color: white;
     padding: 30px 20px;
 }
 
 .header-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -38,13 +49,13 @@ html, body {
 section {
     max-width: 1000px;
     margin: 30px auto;
-    padding: 40px 20px;
-    background: #fff;
+    padding: 40px;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* FORM */
+/* FORMULÁRIO */
 form {
     display: flex;
     flex-direction: column;
@@ -52,26 +63,31 @@ form {
 }
 
 input {
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
 button {
     padding: 12px;
-    border-radius: 5px;
+    background-color: #d32f2f;
+    color: white;
     border: none;
-    background: #d32f2f;
-    color: #fff;
+    border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
 }
 
 button:hover {
-    background: #b71c1c;
+    background-color: #b71c1c;
 }
 
 /* CARDÁPIO */
+#cardapio h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .cardapios {
     display: flex;
     gap: 20px;
@@ -80,28 +96,29 @@ button:hover {
 }
 
 .img-cardapio {
-    max-width: 400px;
     width: 100%;
+    max-width: 400px;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 /* FOOTER */
 footer {
-    background: #d32f2f;
-    color: #fff;
+    background-color: #d32f2f;
+    color: white;
     text-align: center;
     padding: 15px;
     margin-top: 40px;
 }
+/* ===== BOTÃO WHATSAPP FLUTUANTE ===== */
 
-/* ===== BOTÃO WHATSAPP FIXO (FUNCIONA NO SCROLL) ===== */
 .whatsapp-float {
     position: fixed;
-    right: 16px;
     bottom: 20px;
+    right: 15px;
 
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
 
     background-color: #25d366;
     border-radius: 50%;
@@ -110,11 +127,54 @@ footer {
     align-items: center;
     justify-content: center;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-    z-index: 99999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+
+    animation: whatsappPulse 2s infinite;
 }
 
+/* ÍCONE */
 .whatsapp-float img {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
+}
+
+/* ANIMAÇÃO SUAVE */
+@keyframes whatsappPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* BALÃO */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 55px;
+
+    background-color: #111;
+    color: #fff;
+
+    padding: 6px 10px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* PC: aparece no hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+/* MOBILE: balão sempre visível */
+@media (max-width: 768px) {
+    .whatsapp-tooltip {
+        opacity: 1;
+        background-color: #25d366;
+        font-weight: bold;
+    }
 }
