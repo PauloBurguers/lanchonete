@@ -110,3 +110,72 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+/* ===== BOTÃO WHATSAPP FLUTUANTE ===== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: #25d366;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+
+    animation: whatsappPulse 2s infinite;
+}
+
+/* ÍCONE */
+.whatsapp-float img {
+    width: 22px;
+    height: 22px;
+}
+
+/* ANIMAÇÃO SUAVE */
+@keyframes whatsappPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* BALÃO */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 55px;
+
+    background-color: #111;
+    color: #fff;
+
+    padding: 6px 10px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* PC: aparece no hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+/* MOBILE: balão sempre visível */
+@media (max-width: 768px) {
+    .whatsapp-tooltip {
+        opacity: 1;
+        background-color: #25d366;
+        font-weight: bold;
+    }
+}
+
