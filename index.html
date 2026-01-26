@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>Paulo Burguers</title>
 
-    <!-- VIEWPORT CORRETO (SEM ZOOM BUGADO) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- IMPORTANTE PARA MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 
 <body>
@@ -54,13 +54,18 @@
     <p>© 2026 Paulo Burguers</p>
 </footer>
 
-<!-- BOTÃO WHATSAPP OVAL (VERSÃO QUE FUNCIONA) -->
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
 <a
   href="https://wa.me/5519999962216?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido"
   class="whatsapp-float"
   target="_blank"
+  aria-label="Peça pelo WhatsApp"
 >
-  💬 Peça pelo WhatsApp
+    <span class="whatsapp-tooltip">Peça pelo WhatsApp</span>
+    <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+    >
 </a>
 
 </body>

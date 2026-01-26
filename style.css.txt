@@ -1,4 +1,4 @@
-/* RESET */
+/* RESET GERAL */
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +10,17 @@
 body {
     background-color: #f5f5f5;
     color: #333;
-    position: relative;
 }
 
-/* LOGO DE FUNDO (SEM FIXED) */
+/* LOGO DE FUNDO */
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     inset: 0;
-
     background-image: url("../img/logo.JPG");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 300px;
-
     opacity: 0.08;
     z-index: -1;
 }
@@ -58,7 +55,7 @@ section {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* FORM */
+/* FORMULÁRIO */
 form {
     display: flex;
     flex-direction: column;
@@ -73,4 +70,112 @@ input {
 
 button {
     padding: 12px;
-    background-col
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+
+/* CARDÁPIO */
+#cardapio h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cardapios {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.img-cardapio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer {
+    background-color: #d32f2f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+/* ===== BOTÃO WHATSAPP FLUTUANTE ===== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: #25d366;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+
+    animation: whatsappPulse 2s infinite;
+}
+
+/* ÍCONE */
+.whatsapp-float img {
+    width: 22px;
+    height: 22px;
+}
+
+/* ANIMAÇÃO SUAVE */
+@keyframes whatsappPulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* BALÃO */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 55px;
+
+    background-color: #111;
+    color: #fff;
+
+    padding: 6px 10px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* PC: aparece no hover */
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+/* MOBILE: balão sempre visível */
+@media (max-width: 768px) {
+    .whatsapp-tooltip {
+        opacity: 1;
+        background-color: #25d366;
+        font-weight: bold;
+    }
+}
+
