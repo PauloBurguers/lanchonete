@@ -129,60 +129,57 @@ footer {
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
     cursor: pointer;
 }
+/* ============================= */
+/* BOTÃO WHATSAPP LATERAL PEQUENO */
+/* ============================= */
+
 .whatsapp-float {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
+    right: 10px;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 42px;
+    height: 42px;
     background-color: #25d366;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999;
-    animation: pulse 2s infinite;
+    animation: pulse-whatsapp 2s infinite;
 }
 
 .whatsapp-float img {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 }
 
-/* Animação */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.08);
-    }
-    100% {
-        transform: scale(1);
-    }
+/* Animação suave */
+@keyframes pulse-whatsapp {
+    0% { transform: translateY(50%) scale(1); }
+    50% { transform: translateY(50%) scale(1.08); }
+    100% { transform: translateY(50%) scale(1); }
 }
 
 /* Balão */
 .whatsapp-tooltip {
     position: absolute;
-    right: 65px;
+    right: 50px;
     background-color: #111;
     color: #fff;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 16px;
+    font-size: 12px;
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(5px);
-    transition: all 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-/* Mostra balão ao passar o mouse (PC) */
+/* PC: aparece no hover */
 .whatsapp-float:hover .whatsapp-tooltip {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Mobile: balão sempre visível */
@@ -190,7 +187,6 @@ footer {
     .whatsapp-tooltip {
         opacity: 1;
         background-color: #25d366;
-        color: #fff;
         font-weight: bold;
     }
 }
