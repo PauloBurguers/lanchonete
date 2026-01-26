@@ -178,4 +178,20 @@ footer {
         font-weight: bold;
     }
 }
+/* ===== FIX DEFINITIVO WHATSAPP ===== */
+body {
+    transform: none !important;
+}
+
+.whatsapp-float {
+    position: fixed !important;
+    right: 16px !important;
+    bottom: 20px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    border-radius: 50%;
+    z-index: 99999 !important;
+}
 
