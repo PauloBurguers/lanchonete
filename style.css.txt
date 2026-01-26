@@ -129,35 +129,39 @@ footer {
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
     cursor: pointer;
 }
-/* ===== BOTÃO WHATSAPP FIX DEFINITIVO ===== */
+/* ===== BOTÃO WHATSAPP FIX FINAL ===== */
 
 .whatsapp-float {
-    position: fixed !important;
-    right: 8px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    position: fixed;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
 
-    width: 38px !important;
-    height: 38px !important;
+    width: 38px;
+    height: 38px;
 
     background-color: #25d366;
     border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    z-index: 9999 !important;
+    z-index: 9999;
+
+    /* REMOVE estilo de link */
+    text-decoration: none !important;
+    padding: 0 !important;
 }
 
-/* Ícone menor */
+/* Ícone */
 .whatsapp-float img {
-    width: 20px !important;
-    height: 20px !important;
+    width: 20px;
+    height: 20px;
 }
 
-/* Animação simples (sem quebrar posição) */
+/* Animação SEM usar transform */
 .whatsapp-float {
     animation: pulseWhats 2s infinite;
 }
@@ -187,7 +191,7 @@ footer {
     opacity: 1;
 }
 
-/* Mobile: sempre visível */
+/* Mobile */
 @media (max-width: 768px) {
     .whatsapp-tooltip {
         opacity: 1;
@@ -195,3 +199,5 @@ footer {
         font-weight: bold;
     }
 }
+
+
